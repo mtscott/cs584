@@ -10,20 +10,32 @@ class LineSegment:
     self.start = Point(p1.x,p1.y)
     self.end = Point(p2.x, p2.y)
 
-def rhs(LS, p):
-    a = Point(LS.start.x - LS.end.x, LS.start.y - LS.end.y)
-    b = Point(p.x - LS.end.x, p.y - LS.end.y)
+def rhsPoints(p1,p2, p):
+    a = Point(p2.x - p1.x, p2.y - p1.y)
+    b = Point(p.x - p1.x, p.y - p1.y)
     area = a.x * b.y - a.y * b.x
     
     if np.sign(area) == 1:
-        return 1
-    elif np.sign(area) == -1:
         return -1
+    elif np.sign(area) == -1:
+        return 1
+    else:
+        return 0
+
+def rhsLS(LS, p):
+    a = Point(LS.end.x - LS.start.x, LS.end.y - LS.start.y)
+    b = Point(p.x - LS.start.x, p.y - LS.start.y)
+    area = a.x * b.y - a.y * b.x
+    
+    if np.sign(area) == 1:
+        return -1
+    elif np.sign(area) == -1:
+        return 1
     else:
         return 0
     
 def diffside(LS1, LS2):
-    prod = rhs(LS1, LS2.start) * rhs(LS1, LS2.end)
+    prod = rhsLS(LS1, LS2.start) * rhsLS(LS1, LS2.end)
     if prod == -1:
         return 1
     else:
@@ -32,7 +44,7 @@ def diffside(LS1, LS2):
 def cross(LS1, LS2):
     a = diffside(LS1, LS2)
     b = diffside(LS2, LS1)
-    return (a & b)
+    return (a and b)
 
 def areaTri(p1,p2,p3):
     a = Point(p2.x - p1.x, p2.y - p1.y)
