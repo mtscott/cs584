@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Assignment 3-1: Insert}{3}{0}{1}
+\beamer@sectionintoc {2}{Assignment 3-1: Deletion}{15}{0}{2}
