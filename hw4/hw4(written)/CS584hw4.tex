@@ -376,7 +376,44 @@
 	\end{tikzpicture}
 \end{center}
 \end{frame}
-\begin{frame}{We are able to add Points $G$ and $H$ into their nodes without overflow.} 
+\begin{frame}{We are able to add Points $G$ and $H$ without overflow.} 
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
+			\draw[thick,-] (0,0) -- (10,0);
+			\draw[thick,-] (10,0) -- (10,8);
+			\draw[thick,-] (10,8) -- (0,8);
+			\draw[thick,-] (0,8) -- (0,0);
+			\draw[brown, thick] (1.4,0.4) rectangle (8.1,7.1);
+			\draw (7.5,7.3) node {Root};
+			\node[cross,thick,minimum size=1pt] at (1.5,6.5) {};
+			\draw (1.5,6.5) node[anchor = south east] {$A$};
+			\node[cross,thick,minimum size=1pt] at (3.5,7) {};
+			\draw (3.5,7) node[anchor = south east] {$E$};
+			\draw[black, thick] (1.45,6.4) rectangle (3.55,7.05);
+			\draw (2.5,6.75) node {D3};
+			\node[cross,thick,minimum size=1pt] at (8,0.5) {};
+			\draw (8.0,0.5) node[anchor = south east] {$F$};
+			\node[cross,thick,minimum size=1pt] at (5.5,2.5) {};
+			\draw (5.5,2.5) node[anchor = south east] {$C$};
+			\draw[black, thick] (5.45,0.45) rectangle (8.05,2.55);
+			\draw (7.75,2.25) node {D2};
+			\node[cross,thick,minimum size=1pt] at (8,6.5) {};
+			\draw (8,6.5) node[anchor = south east] {$D$};
+			\node[cross,thick,minimum size=1pt] at (6.5,5.5) {};
+			\draw (6.5,5.5) node[anchor = south east] {$B$};
+			\draw[black, thick] (6.45,5.45) rectangle (8.05,6.55);
+			\draw (6.4,6.6) node[anchor = north west] {D1};
+			% New points G
+			\node[cross,thick,minimum size=1pt] at (7,1.5) {};
+			\draw (7,1.5) node[anchor = south east] {$G$};
+			% New points H
+			\node[cross,thick,minimum size=1pt] at (3.5,6.5) {};
+			\draw (3.5,6.5) node[anchor = south east] {$H$};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+\begin{frame}{We add Point $I$, which isn't in a node.} 
 	\begin{center}
 		\begin{tikzpicture}
 			\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
@@ -416,6 +453,298 @@
 		\end{tikzpicture}
 	\end{center}
 \end{frame}
-	
+\begin{frame}{Expanding D1, D3 both yield an increase of 8, we pick D1.} 
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
+			\draw[thick,-] (0,0) -- (10,0);
+			\draw[thick,-] (10,0) -- (10,8);
+			\draw[thick,-] (10,8) -- (0,8);
+			\draw[thick,-] (0,8) -- (0,0);
+			\draw[brown, thick] (1.4,0.4) rectangle (8.1,7.1);
+			\draw (7.5,7.3) node {Root};
+			\node[cross,thick,minimum size=1pt] at (1.5,6.5) {};
+			\draw (1.5,6.5) node[anchor = south east] {$A$};
+			\node[cross,thick,minimum size=1pt] at (3.5,7) {};
+			\draw (3.5,7) node[anchor = south east] {$E$};
+			\draw[black, thick] (1.45,6.4) rectangle (3.55,7.05);
+			\draw (2.5,6.75) node {D3};
+			\node[cross,thick,minimum size=1pt] at (8,0.5) {};
+			\draw (8.0,0.5) node[anchor = south east] {$F$};
+			\node[cross,thick,minimum size=1pt] at (5.5,2.5) {};
+			\draw (5.5,2.5) node[anchor = south east] {$C$};
+			\draw[black, thick] (5.45,0.45) rectangle (8.05,2.55);
+			\draw (7.75,2.25) node {D2};
+			\node[cross,thick,minimum size=1pt] at (8,6.5) {};
+			\draw (8,6.5) node[anchor = south east] {$D$};
+			\node[cross,thick,minimum size=1pt] at (6.5,5.5) {};
+			\draw (6.5,5.5) node[anchor = south east] {$B$};
+			\draw[black, thick] (4.45,5.45) rectangle (8.05,6.55);
+			\draw (6.4,6.6) node[anchor = north west] {D1};
+			% New points G
+			\node[cross,thick,minimum size=1pt] at (7,1.5) {};
+			\draw (7,1.5) node[anchor = south east] {$G$};
+			% New points H
+			\node[cross,thick,minimum size=1pt] at (3.5,6.5) {};
+			\draw (3.5,6.5) node[anchor = south east] {$H$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (4.5,6) {};
+			\draw (4.5,6) node[anchor = south west] {$I$};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+\begin{frame}{{\bf Overflow!} Adding Point J, D3 is overfilled, so we split it.} 
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
+			\draw[thick,-] (0,0) -- (10,0);
+			\draw[thick,-] (10,0) -- (10,8);
+			\draw[thick,-] (10,8) -- (0,8);
+			\draw[thick,-] (0,8) -- (0,0);
+			\draw[brown, thick] (1.4,0.4) rectangle (8.1,7.1);
+			\draw (7.5,7.3) node {Root};
+			\node[cross,thick,minimum size=1pt] at (1.5,6.5) {};
+			\draw (1.5,6.5) node[anchor = south east] {$A$};
+			\node[cross,thick,minimum size=1pt] at (3.5,7) {};
+			\draw (3.5,7) node[anchor = south east] {$E$};
+			\draw[black, thick] (1.45,6.4) rectangle (3.55,7.05);
+			\draw (2, 6.875) node {D3};
+			\node[cross,thick,minimum size=1pt] at (8,0.5) {};
+			\draw (8.0,0.5) node[anchor = south east] {$F$};
+			\node[cross,thick,minimum size=1pt] at (5.5,2.5) {};
+			\draw (5.5,2.5) node[anchor = south east] {$C$};
+			\draw[black, thick] (5.45,0.45) rectangle (8.05,2.55);
+			\draw (7.75,2.25) node {D2};
+			\node[cross,thick,minimum size=1pt] at (8,6.5) {};
+			\draw (8,6.5) node[anchor = south east] {$D$};
+			\node[cross,thick,minimum size=1pt] at (6.5,5.5) {};
+			\draw (6.5,5.5) node[anchor = south east] {$B$};
+			\draw[black, thick] (4.45,5.45) rectangle (8.05,6.55);
+			\draw (6.4,6.6) node[anchor = north west] {D1};
+			% New points G
+			\node[cross,thick,minimum size=1pt] at (7,1.5) {};
+			\draw (7,1.5) node[anchor = south east] {$G$};
+			% New points H
+			\node[cross,thick,minimum size=1pt] at (3.5,6.5) {};
+			\draw (3.5,6.5) node[anchor = south east] {$H$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (4.5,6) {};
+			\draw (4.5,6) node[anchor = south west] {$I$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (2.5,6.5) {};
+			\draw (2.5,6.5) node[anchor = south west] {$J$};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+\begin{frame}{{\bf Overflow!} We have overflowed the Root with 4 children}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
+			\draw[thick,-] (0,0) -- (10,0);
+			\draw[thick,-] (10,0) -- (10,8);
+			\draw[thick,-] (10,8) -- (0,8);
+			\draw[thick,-] (0,8) -- (0,0);
+			\draw[brown, thick] (1.4,0.4) rectangle (8.1,7.1);
+			\draw (7.5,7.3) node {Root};
+			\node[cross,thick,minimum size=1pt] at (1.5,6.5) {};
+			\draw (1.5,6.5) node[anchor = south east] {$A$};
+			\node[cross,thick,minimum size=1pt] at (3.5,7) {};
+			\draw (3.5,7) node[anchor = south east] {$E$};
+			\draw[black, thick] (1.45,6.55) rectangle (2.55,6.05);
+			\draw (2, 6.875) node {D31};
+			\draw[black, thick] (2.95,6.4) rectangle (3.55,7.05);
+			\draw (3.25, 6.125) node {D32};
+			\node[cross,thick,minimum size=1pt] at (8,0.5) {};
+			\draw (8.0,0.5) node[anchor = south east] {$F$};
+			\node[cross,thick,minimum size=1pt] at (5.5,2.5) {};
+			\draw (5.5,2.5) node[anchor = south east] {$C$};
+			\draw[black, thick] (5.45,0.45) rectangle (8.05,2.55);
+			\draw (7.75,2.25) node {D2};
+			\node[cross,thick,minimum size=1pt] at (8,6.5) {};
+			\draw (8,6.5) node[anchor = south east] {$D$};
+			\node[cross,thick,minimum size=1pt] at (6.5,5.5) {};
+			\draw (6.5,5.5) node[anchor = south east] {$B$};
+			\draw[black, thick] (4.45,5.45) rectangle (8.05,6.55);
+			\draw (6.4,6.6) node[anchor = north west] {D1};
+			% New points G
+			\node[cross,thick,minimum size=1pt] at (7,1.5) {};
+			\draw (7,1.5) node[anchor = south east] {$G$};
+			% New points H
+			\node[cross,thick,minimum size=1pt] at (3.5,6.5) {};
+			\draw (3.5,6.5) node[anchor = south east] {$H$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (4.5,6) {};
+			\draw (4.5,6) node[anchor = south west] {$I$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (2.5,6.5) {};
+			\draw (2.5,6.5) node[anchor = south west] {$J$};
+		\end{tikzpicture}
+	\end{center}
+	\end{frame}
+	\begin{frame}{We group the 4 nodes into 2 clusters, fixing the overflow.} 
+		\begin{center}
+			\begin{tikzpicture}
+				\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
+				\draw[thick,-] (0,0) -- (10,0);
+				\draw[thick,-] (10,0) -- (10,8);
+				\draw[thick,-] (10,8) -- (0,8);
+				\draw[thick,-] (0,8) -- (0,0);
+				\draw[brown, thick] (1.4,0.4) rectangle (8.1,7.1);
+				\draw (7.5,7.3) node {Root};
+				\node[cross,thick,minimum size=1pt] at (1.5,6.5) {};
+				\draw (1.5,6.5) node[anchor = north west] {$A$};
+				\node[cross,thick,minimum size=1pt] at (3.5,7) {};
+				\draw (3.5,7) node[anchor = north west] {$E$};
+				\draw[black, thick] (1.45,6.55) rectangle (2.55,6.05);
+				\draw (2, 6.875) node {D3};
+				\draw[black, thick] (2.95,6.4) rectangle (3.55,7.05);
+				\draw (3.25, 6.125) node {D2};
+				\node[cross,thick,minimum size=1pt] at (8,0.5) {};
+				\draw (8.0,0.5) node[anchor = south east] {$F$};
+				\node[cross,thick,minimum size=1pt] at (5.5,2.5) {};
+				\draw (5.5,2.5) node[anchor = north west] {$C$};
+				\draw[magenta, thick] (1.425,5.425) rectangle (8.075,7.075);
+				\draw (1.75,5.125) node {C1};
+				\draw[black, thick] (6.95,0.475) rectangle (8.025,1.55);
+				\draw (7.75,1.75) node {E1};
+				\draw[black, thick] (5.475,1.925) rectangle (6.05,2.525);
+				\draw (5.75,1.75) node {E2};
+				\draw[magenta, thick] (5.45,0.45) rectangle (8.05,2.55);
+				\draw (7.75,2.75) node {C2};
+				\node[cross,thick,minimum size=1pt] at (8,6.5) {};
+				\draw (8,6.5) node[anchor = south east] {$D$};
+				\node[cross,thick,minimum size=1pt] at (6.5,5.5) {};
+				\draw (6.5,5.5) node[anchor = south east] {$B$};
+				\draw[black, thick] (4.45,5.45) rectangle (8.05,6.55);
+				\draw (6.4,6.6) node[anchor = north west] {D1};
+				% New points G
+				\node[cross,thick,minimum size=1pt] at (7,1.5) {};
+				\draw (7,1.5) node[anchor = north west] {$G$};
+				% New points H
+				\node[cross,thick,minimum size=1pt] at (3.5,6.5) {};
+				\draw (3.5,6.5) node[anchor = south east] {$H$};
+				% New points I
+				\node[cross,thick,minimum size=1pt] at (4.5,6) {};
+				\draw (4.5,6) node[anchor = south west] {$I$};
+				% New points I
+				\node[cross,thick,minimum size=1pt] at (2.5,6.5) {};
+				\draw (2.5,6.5) node[anchor = north east] {$J$};
+			\end{tikzpicture}
+		\end{center}
+\end{frame}
+\begin{frame}{Conceptual Explanation}
+	Since we overflowed the root, we needed to find a way to combine the pages into 3 or less clusters. Additionally, we need all the points to be at the same level so they are all balanced. We decided to create C1 and C2 which both have at most 3 pages in them. There were two ways to combine the pages, but the way that was proposed above has no overlap and minimized the area of the magenta pages.\\
+	By doing what we did, we have balanced the tree, minimized overlap and total area. Also we have solved the overflows. Neither the root is overflowed with 3 children, nor are C1 or C2 overflowed, 3 and 2 respectively. Lastly, Each page has at least 1 entry in it.
+\end{frame}
+	\begin{frame}{We add Point $K$, which isn't in a node.} 
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
+			\draw[thick,-] (0,0) -- (10,0);
+			\draw[thick,-] (10,0) -- (10,8);
+			\draw[thick,-] (10,8) -- (0,8);
+			\draw[thick,-] (0,8) -- (0,0);
+			\draw[brown, thick] (1.4,0.4) rectangle (8.1,7.1);
+			\draw (7.5,7.3) node {Root};
+			\node[cross,thick,minimum size=1pt] at (1.5,6.5) {};
+			\draw (1.5,6.5) node[anchor = north west] {$A$};
+			\node[cross,thick,minimum size=1pt] at (3.5,7) {};
+			\draw (3.5,7) node[anchor = north west] {$E$};
+			\draw[black, thick] (1.45,6.55) rectangle (2.55,6.05);
+			\draw (2, 6.875) node {D3};
+			\draw[black, thick] (2.95,6.4) rectangle (3.55,7.05);
+			\draw (3.25, 6.125) node {D2};
+			\node[cross,thick,minimum size=1pt] at (8,0.5) {};
+			\draw (8.0,0.5) node[anchor = south east] {$F$};
+			\node[cross,thick,minimum size=1pt] at (5.5,2.5) {};
+			\draw (5.5,2.5) node[anchor = north west] {$C$};
+			\draw[magenta, thick] (1.425,5.425) rectangle (8.075,7.075);
+			\draw (1.75,5.125) node {C1};
+			\draw[black, thick] (6.95,0.475) rectangle (8.025,1.55);
+			\draw (7.75,1.75) node {E1};
+			\draw[black, thick] (5.475,1.925) rectangle (6.05,2.525);
+			\draw (5.75,1.75) node {E2};
+			\draw[magenta, thick] (5.45,0.45) rectangle (8.05,2.55);
+			\draw (7.75,2.75) node {C2};
+			\node[cross,thick,minimum size=1pt] at (8,6.5) {};
+			\draw (8,6.5) node[anchor = south east] {$D$};
+			\node[cross,thick,minimum size=1pt] at (6.5,5.5) {};
+			\draw (6.5,5.5) node[anchor = south east] {$B$};
+			\draw[black, thick] (4.45,5.45) rectangle (8.05,6.55);
+			\draw (6.4,6.6) node[anchor = north west] {D1};
+			% New points G
+			\node[cross,thick,minimum size=1pt] at (7,1.5) {};
+			\draw (7,1.5) node[anchor = north west] {$G$};
+			% New points H
+			\node[cross,thick,minimum size=1pt] at (3.5,6.5) {};
+			\draw (3.5,6.5) node[anchor = south east] {$H$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (4.5,6) {};
+			\draw (4.5,6) node[anchor = south west] {$I$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (2.5,6.5) {};
+			\draw (2.5,6.5) node[anchor = north east] {$J$};
+			\node[cross,thick,minimum size=1pt] at (5.5,4) {};
+			\draw (5.5,4) node[anchor = south west] {$K$};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+	\begin{frame}{We expand C2 and E2 to add Point $K$ to a node.} 
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=0.5cm,gray,very thin] (0,0) grid (10,8);
+			\draw[thick,-] (0,0) -- (10,0);
+			\draw[thick,-] (10,0) -- (10,8);
+			\draw[thick,-] (10,8) -- (0,8);
+			\draw[thick,-] (0,8) -- (0,0);
+			\draw[brown, thick] (1.4,0.4) rectangle (8.1,7.1);
+			\draw (7.5,7.3) node {Root};
+			\node[cross,thick,minimum size=1pt] at (1.5,6.5) {};
+			\draw (1.5,6.5) node[anchor = north west] {$A$};
+			\node[cross,thick,minimum size=1pt] at (3.5,7) {};
+			\draw (3.5,7) node[anchor = north west] {$E$};
+			\draw[black, thick] (1.45,6.55) rectangle (2.55,6.05);
+			\draw (2, 6.875) node {D3};
+			\draw[black, thick] (2.95,6.4) rectangle (3.55,7.05);
+			\draw (3.25, 6.125) node {D2};
+			\node[cross,thick,minimum size=1pt] at (8,0.5) {};
+			\draw (8.0,0.5) node[anchor = south east] {$F$};
+			\node[cross,thick,minimum size=1pt] at (5.5,2.5) {};
+			\draw (5.5,2.5) node[anchor = south west] {$C$};
+			\draw[magenta, thick] (1.425,5.425) rectangle (8.075,7.075);
+			\draw (1.75,5.125) node {C1};
+			\draw[black, thick] (6.95,0.475) rectangle (8.025,1.55);
+			\draw (7.75,1.8) node {E1};
+			\draw[black, thick] (5.475,2.425) rectangle (6.05,4.025);
+			\draw (5.75,2.2) node {E2};
+			\draw[magenta, thick] (5.45,0.45) rectangle (8.05,4.05);
+			\draw (7.75,4.25) node {C2};
+			\node[cross,thick,minimum size=1pt] at (8,6.5) {};
+			\draw (8,6.5) node[anchor = south east] {$D$};
+			\node[cross,thick,minimum size=1pt] at (6.5,5.5) {};
+			\draw (6.5,5.5) node[anchor = south east] {$B$};
+			\draw[black, thick] (4.45,5.45) rectangle (8.05,6.55);
+			\draw (6.4,6.6) node[anchor = north west] {D1};
+			% New points G
+			\node[cross,thick,minimum size=1pt] at (7,1.5) {};
+			\draw (7,1.5) node[anchor = north west] {$G$};
+			% New points H
+			\node[cross,thick,minimum size=1pt] at (3.5,6.5) {};
+			\draw (3.5,6.5) node[anchor = south east] {$H$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (4.5,6) {};
+			\draw (4.5,6) node[anchor = south west] {$I$};
+			% New points I
+			\node[cross,thick,minimum size=1pt] at (2.5,6.5) {};
+			\draw (2.5,6.5) node[anchor = north east] {$J$};
+			\node[cross,thick,minimum size=1pt] at (5.5,4) {};
+			\draw (5.5,4) node[anchor = north west] {$K$};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+\begin{frame}{Conclusion}
+	We expanded C2 and E2 as it minimized the area added. Since, we have no more points to add, we should double check the overflow at each level. All black pages have at least 1 and at most 3 points in them. Additionally, the magenta pages have at least 1 and at most 3 pages in them. Lastly, the Root has 2 pages within. All the points are 2 levels deep -- in black which are in magenta, which are in the root. We have always minimized overlap, added area and lastly, considered which is ``more square" in a locally greedy fashion. {\bf DONE! :)}
+\end{frame}
+
 
 \end{document}

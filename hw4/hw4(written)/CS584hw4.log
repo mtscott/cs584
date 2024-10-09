@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.28)  7 OCT 2024 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.28)  9 OCT 2024 11:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1588,11 +1588,26 @@ Overfull \vbox (2.4697pt too high) detected at line 164
 
 ] [23
 
-]
-Overfull \vbox (9.14882pt too high) detected at line 418
- []
+] [24
 
-[24
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+]
+[32
+
+] [33
 
 ]
 \tf@nav=\write6
@@ -1609,13 +1624,13 @@ Package rerunfilecheck Info: File `CS584hw4.out' has not changed.
 (rerunfilecheck)             Checksum: F0BFC0EA7B4AE426FB0932EABC4C7E0A;518.
  ) 
 Here is how much of TeX's memory you used:
- 32000 strings out of 476025
- 640077 string characters out of 5790016
- 1871388 words of memory out of 5000000
- 51778 multiletter control sequences out of 15000+600000
- 530937 words of font info for 96 fonts, out of 8000000 for 9000
+ 32045 strings out of 476025
+ 640627 string characters out of 5790016
+ 1877388 words of memory out of 5000000
+ 51805 multiletter control sequences out of 15000+600000
+ 531231 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,14n,122p,401b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,14n,122p,560b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
@@ -1627,10 +1642,10 @@ usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha12.p
 fb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb10
 .pfb>
-Output written on CS584hw4.pdf (24 pages, 135643 bytes).
+Output written on CS584hw4.pdf (33 pages, 163892 bytes).
 PDF statistics:
- 714 PDF objects out of 1000 (max. 8388607)
- 655 compressed objects within 7 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 946 PDF objects out of 1000 (max. 8388607)
+ 876 compressed objects within 9 object streams
+ 70 named destinations out of 1000 (max. 500000)
  67 words of extra memory for PDF output out of 10000 (max. 10000000)
 
